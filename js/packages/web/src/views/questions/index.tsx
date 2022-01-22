@@ -3,7 +3,7 @@ import { Layout } from 'antd';
 import { StaticPage } from '../../components/StaticPage';
 import { data } from './staticData';
 
-export const HomeView = () => {
+export const FaqView = () => {
   return (
     <Layout style={{ margin: 0, alignItems: 'center' }}>
       <StaticPage
