@@ -1,22 +1,23 @@
 export const data = {
   headContent: {
-    title: 'We are Metaplex',
-    subtitle: 'About Us',
-    bannerImage: '/main-banner.png',
+    title: 'NFT, Solana, Phantom?',
+    subtitle: 'Quelques explications ',
+    bannerImage: '/banner2.jpeg',
   },
   leftContent: undefined,
   midContent: {
     sections: [
       {
-        title: 'Metaplex is a protocol built on top of Solana that allows:',
+        title: 'Quelques termes à comprendre...  ',
         paragraphs: [
-          '• Creating/Minting non-fungible tokens;',
-          '• Starting a variety of auctions for primary/secondary sales;',
-          '• and Visualizing NFTs in a standard way across wallets and applications.',
+          '• Solana : La blockchain utilisée pour créer les NFTs et y faire des transactions',
+          '• NFT : Le type de jeton non-fongible utilisé comme transaction de produits',
+          '• Phantom : L application qui sert de wallet permettant de se connecter à divers applications ',
+          '• Binance : Un échangeur centralisé permettant l achat de token en CHF / Dollar / Euro',
         ],
-        image: '/main-banner.png',
+        image: '',
       },
     ],
   },
-  bottomContent: true,
+  bottomContent: false,
 };

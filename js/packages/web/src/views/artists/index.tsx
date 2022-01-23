@@ -6,6 +6,8 @@ import { ArtistCard } from '../../components/ArtistCard';
 import { useMeta } from '../../contexts';
 
 const { Content } = Layout;
+let nameCo = "-";
+let titleCo = "-";
 
 export const ArtistsView = () => {
   const { whitelistedCreatorsByCreator } = useMeta();
@@ -26,16 +28,27 @@ export const ArtistsView = () => {
     >
       {items.map((m, idx) => {
         const id = m.info.address;
+        const backg = "/banner"+id+".jpeg"
+        const user = "/banner"+id+".jpeg"
+
+if(id == "88yYDZ7KPiVfpSHaTQ2jDpRKezmC1VVnzk7CV9v8boY5"){
+  titleCo = "Sur le départ du soleil";
+  nameCo = "Sur le départ du soleil";
+} 
+if(id == "8pSUGaKMWtdrvUV5R96Cxz8Q54EJizEPyKxtYjkDW7YW"){
+  titleCo = "Un coucher ";
+  nameCo = "L'hymne de nos montagnes";
+} 
         return (
           <Link to={`/artists/${id}`} key={idx}>
             <ArtistCard
               key={id}
               artist={{
                 address: m.info.address,
-                name: m.info.name || '',
-                image: m.info.image || '',
+                name: nameCo || '',
+                image: user || '',
                 link: m.info.twitter || '',
-                background: m.info.background || '',
+                background: backg || '',
               }}
             />
           </Link>
