@@ -414,8 +414,7 @@ export const Cog = () => {
         }
       >
         <Button className="wallet-key">
-          <img src="https://lberthod.github.io/metaplex/cog.svg" />
-        </Button>
+/-/        </Button>
       </Popover>
     </div>
   );
