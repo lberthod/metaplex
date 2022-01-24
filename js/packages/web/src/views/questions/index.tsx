@@ -17,6 +17,7 @@ export const FaqView = () => {
 
     fontFamily: "Arial"
   };
+
   return (
     <Layout style={{ margin: 0, alignItems: 'center' }}>
       <StaticPage
@@ -86,7 +87,15 @@ export const FaqView = () => {
 
        <iframe width="420" height="345" src="https://www.youtube.com/embed/Cm6PcTa6gB4">
 </iframe>
+<br></br>
+       <br></br>
+       <h1 style={mystyle}>Binance</h1>
 
+<h2>Vidéo sur l'achat de jetons solana sur Binance</h2>
+       <iframe width="420" height="345" src="https://www.youtube.com/embed/DG4Fy-jaXAA"></iframe>
+       <br></br>
+       <h2>Vidéo sur l'envoi de jetons solana de Binance à Phantom</h2>
+       <iframe width="420" height="345" src="https://www.youtube.com/embed/DG4Fy-jaXAA"></iframe>
 
        
     </Layout>
