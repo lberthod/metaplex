@@ -32,8 +32,10 @@ const getDefaultLinkActions = (connected: boolean) => {
      <Link to={`/a-propos`} key={'staticPage'}>
      <Button className="app-btn">A Propos</Button>
    </Link>,
+     <Link to={`/explore`} key={'explore'}>
+     <Button className="app-btn">Explorer</Button>
+   </Link>,
      
-
     
   ];
 };
