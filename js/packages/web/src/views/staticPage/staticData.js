@@ -2,7 +2,7 @@ export const data = {
   headContent: {
     title: 'I am dark VR',
     subtitle: 'A Propos',
-    bannerImage: 'banner.jpg',
+    bannerImage: 'https://lberthod.github.io/metaplex/banner.jpg',
   },
   leftContent: undefined,
   midContent: {

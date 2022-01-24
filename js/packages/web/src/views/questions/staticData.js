@@ -2,7 +2,7 @@ export const data = {
   headContent: {
     title: 'NFT, Solana, Phantom?',
     subtitle: 'Quelques explications ',
-    bannerImage: '/banner2.jpeg',
+    bannerImage: 'https://lberthod.github.io/metaplex/banner2.jpeg',
   },
   leftContent: undefined,
   midContent: {
