@@ -91,17 +91,18 @@ export const FaqView = () => {
        <br></br>
        <h1 style={mystyle}>Binance</h1>
 
-<h2>Vidéo sur l'achat de jetons solana sur Binance</h2>
 
-<p>
-  L plateforme d'échange de cryptomonnaies <a href="https://www.binance.com/fr">Binance </a>
+<p style={styleParagraphe}>
+  La plateforme d'échange de cryptomonnaies <a href="https://www.binance.com/fr">Binance </a>
 permet de stocker, acheter, revendre, et échanger des cryptomonnaies contre 
    d'autres cryptomonnaies mais également contre des monnaies fiduciaires telles que l'Euro ou le Dollar. 
    Cette plateforme vous servira pour acquérir vos premières cryptomonnaies afin d'intégrer ces écosystèmes.
    Nous vous expliquons avec Binance, mais il est également possible de faire avec d'autres. La 
    <a href="https://coinmarketcap.com/fr/rankings/exchanges/"> classement des échangeurs</a> est accesible via CoinMarketCap.
   
-</p>
+</p>  
+<br></br>
+<h2>Vidéo sur l'achat de jetons solana sur Binance</h2>
 
        <iframe width="420" height="345" src="https://www.youtube.com/embed/DG4Fy-jaXAA"></iframe>
        <br></br>
