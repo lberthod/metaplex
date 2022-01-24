@@ -28,32 +28,42 @@ export const ArtistsView = () => {
     >
       {items.map((m, idx) => {
         const id = m.info.address;
-        const backg = "/banner"+id+".jpeg"
-        const user = "/banner"+id+".jpeg"
+        const backg = "https://lberthod.github.io/metaplex//banner"+id+".jpeg"
+        const user = "https://lberthod.github.io/metaplex//banner"+id+".jpeg"
 
 if(id == "88yYDZ7KPiVfpSHaTQ2jDpRKezmC1VVnzk7CV9v8boY5"){
   titleCo = "Sur le départ du soleil";
   nameCo = "Sur le départ du soleil";
+
+  return (
+         
+    <Link to={`/artists/${id}`} key={idx}>
+      <ArtistCard
+        key={id}
+        artist={{
+          address: m.info.address,
+          name: nameCo || '',
+          image: user || '',
+          link: m.info.twitter || '',
+          background: backg || '',
+        }}
+      />
+    </Link>
+  );
+
+  
 } 
 if(id == "8pSUGaKMWtdrvUV5R96Cxz8Q54EJizEPyKxtYjkDW7YW"){
   titleCo = "Un coucher ";
   nameCo = "L'hymne de nos montagnes";
 } 
-        return (
-          <Link to={`/artists/${id}`} key={idx}>
-            <ArtistCard
-              key={id}
-              artist={{
-                address: m.info.address,
-                name: nameCo || '',
-                image: user || '',
-                link: m.info.twitter || '',
-                background: backg || '',
-              }}
-            />
-          </Link>
-        );
+     
+
+
+
       })}
+
+
     </Masonry>
   );
 

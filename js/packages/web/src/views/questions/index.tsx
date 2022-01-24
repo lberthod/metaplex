@@ -92,6 +92,11 @@ export const FaqView = () => {
        <h1 style={mystyle}>Binance</h1>
 
 <h2>Vidéo sur l'achat de jetons solana sur Binance</h2>
+
+<p>
+  
+</p>
+
        <iframe width="420" height="345" src="https://www.youtube.com/embed/DG4Fy-jaXAA"></iframe>
        <br></br>
        <h2>Vidéo sur l'envoi de jetons solana de Binance à Phantom</h2>
