@@ -13,7 +13,7 @@ export const StaticPageView = () => {
         bottomContent={data.bottomContent}
       />
       <br></br>
-      <a href="https://www.instagram.com/high_vr/"><img height="50px" src="instagram.png"/></a>
+      <a href="https://www.instagram.com/high_vr/"><img height="50px" src="https://lberthod.github.io/metaplex/instagram.png"/></a>
     </Layout>
     
   );

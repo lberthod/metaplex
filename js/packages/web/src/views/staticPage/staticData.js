@@ -18,7 +18,7 @@ export const data = {
         
           
         ],
-        image: '/profil.jpeg',
+        image: 'https://lberthod.github.io/metaplex/profil.jpeg',
       },
     ],
   },
