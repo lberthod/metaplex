@@ -1,4 +1,4 @@
-import { Col, Layout } from 'antd';
+import { Layout } from 'antd';
 import React from 'react';
 import Masonry from 'react-masonry-css';
 import { Link } from 'react-router-dom';
@@ -6,8 +6,6 @@ import { ArtistCard } from '../../components/ArtistCard';
 import { useMeta } from '../../contexts';
 
 const { Content } = Layout;
-let nameCo = "-";
-let titleCo = "-";
 
 export const ArtistsView = () => {
   const { whitelistedCreatorsByCreator } = useMeta();
@@ -18,7 +16,6 @@ export const ArtistsView = () => {
     700: 2,
     500: 1,
   };
-
   const items = Object.values(whitelistedCreatorsByCreator);
   const artistGrid = (
     <Masonry
@@ -28,49 +25,28 @@ export const ArtistsView = () => {
     >
       {items.map((m, idx) => {
         const id = m.info.address;
-        const backg = "https://lberthod.github.io/metaplex//banner"+id+".jpeg"
-        const user = "https://lberthod.github.io/metaplex//banner"+id+".jpeg"
-
-if(id == "88yYDZ7KPiVfpSHaTQ2jDpRKezmC1VVnzk7CV9v8boY5"){
-  titleCo = "Sur le départ du soleil";
-  nameCo = "Sur le départ du soleil";
-
-  return (
-         
-    <Link to={`/artists/${id}`} key={idx}>
-      <ArtistCard
-        key={id}
-        artist={{
-          address: m.info.address,
-          name: nameCo || '',
-          image: user || '',
-          link: m.info.twitter || '',
-          background: backg || '',
-        }}
-      />
-    </Link>
-  );
-
-  
-} 
-if(id == "8pSUGaKMWtdrvUV5R96Cxz8Q54EJizEPyKxtYjkDW7YW"){
-  titleCo = "Un coucher ";
-  nameCo = "L'hymne de nos montagnes";
-} 
-     
-
-
-
+        return (
+          <Link to={`/artists/${id}`} key={idx}>
+            <ArtistCard
+              key={id}
+              artist={{
+                address: m.info.address,
+                name: m.info.name || '',
+                image: m.info.image || '',
+                link: m.info.twitter || '',
+                background: m.info.background || '',
+              }}
+            />
+          </Link>
+        );
       })}
-
-
     </Masonry>
   );
 
   return (
     <Layout style={{ margin: 0, marginTop: 30 }}>
       <Content style={{ display: 'flex', flexWrap: 'wrap' }}>
-        <Col style={{ width: '100%', marginTop: 10 }}>{artistGrid}</Col>
+        {artistGrid}
       </Content>
     </Layout>
   );

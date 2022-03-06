@@ -17,26 +17,18 @@ import { MobileNavbar } from '../MobileNavbar';
 const getDefaultLinkActions = (connected: boolean) => {
   return [
     <Link to={`/`} key={'explore'}>
-      <Button className="app-btn">Accueil</Button>
+      <Button className="app-btn">Home</Button>
     </Link>,
+   
     <Link to={`/artworks`} key={'artwork'}>
-      <Button className="app-btn">{connected ? 'Mes NFTS' : 'Artwork'}</Button>
+      <Button className="app-btn">{connected ? '' : 'Artwork'}My Watches</Button>
     </Link>,
     <Link to={`/artists`} key={'artists'}>
-      <Button className="app-btn">Les Collections</Button>
+      <Button className="app-btn">Collection's Watches</Button>
     </Link>,
-      
-       <Link to={`/faq`} key={'faq'}>
-       <Button className="app-btn">FAQ</Button>
-     </Link>,
-     <Link to={`/a-propos`} key={'staticPage'}>
-     <Button className="app-btn">A Propos</Button>
-   </Link>,
-     <Link to={`/explore`} key={'explore'}>
-     <Button className="app-btn">Explorer</Button>
-   </Link>,
-     
-    
+    <Link to={`/about`} key={'about'}>
+    <Button className="app-btn">About</Button>
+  </Link>,
   ];
 };
 
@@ -63,7 +55,7 @@ export const MetaplexMenu = () => {
     return (
       <>
         <Modal
-          title={<img src={'https://lberthod.github.io/metaplex/darkvr.png'} />}
+          title={<img src={'/metaplex-logo.svg'} />}
           visible={isModalVisible}
           footer={null}
           className={'modal-box'}
@@ -122,7 +114,7 @@ export const MetaplexMenu = () => {
 export const LogoLink = () => {
   return (
     <Link to={`/`}>
-      <img src={'https://lberthod.github.io/metaplex/darkvr-logo.png'} />
+      <img src={'/metaplex-logo.svg'} />
     </Link>
   );
 };

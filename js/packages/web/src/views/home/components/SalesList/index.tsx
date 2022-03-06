@@ -1,7 +1,7 @@
 import { useWallet } from '@solana/wallet-adapter-react';
 import { Col, Layout, Row, Tabs } from 'antd';
 import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 
 import { useMeta } from '../../../../contexts';
 import { CardLoader } from '../../../../components/MyLoader';
@@ -22,21 +22,64 @@ export enum LiveAuctionViewState {
   Own = '4',
 }
 
-export const SalesListView = () => {
+export const SalesListView = (props: { collectionMintFilter?: string }) => {
   const [activeKey, setActiveKey] = useState(LiveAuctionViewState.All);
   const { isLoading } = useMeta();
   const { connected } = useWallet();
   const { auctions, hasResaleAuctions } = useAuctionsList(activeKey);
 
+  const filteredAuctions = useMemo(() => {
+    if (props.collectionMintFilter) {
+      return auctions.filter(
+        auction =>
+          auction.thumbnail.metadata.info.collection?.key ===
+          props.collectionMintFilter,
+      );
+    }
+    return auctions;
+  }, [auctions, props.collectionMintFilter]);
+
   return (
     <>
-      <Banner
-        src="/banner.jpg"
-        headingText="The amazing world of Metaplex."
-        subHeadingText="Buy exclusive Metaplex NFTs."
-        actionComponent={<HowToBuyModal buttonClassName="secondary-btn" />}
-        useBannerBg
-      />
+      {!props.collectionMintFilter && (
+        <Banner
+          src="/main-banner.svg"
+          headingText="The Leading Marketplace for Luxury Watches NFTs"
+          subHeadingText="Behind every collection of images is a real luxury watch."
+          actionComponent={<HowToBuyModal buttonClassName="secondary-btn" />}
+          useBannerBg
+        />
+      )}
+
+<p><h2>All big brands are represented</h2>
+Audemars Piguet
+Breitling
+BrÈguet
+Cartier
+Omega
+Patek Philippe
+Piaget
+Rolex
+Tudor</p>
+
+
+NFT-Luxury Buyer Protection: The Safest Way to Buy, Sell, Finance Your Dream Watch<br>
+</br><br>
+</br>
+Purchase or Sale via Crypto<br>
+</br>
+Authenicity Guaranteed<br>
+</br>
+Global Money Back Guaranteed<br>
+</br><br>
+</br>
+We want to make thousands of customers happy to buy, sell, trade, finance of give a value to their luxury watch.
+<br>
+</br><br>
+</br>
+See our collection of watches
+
+
       <Layout>
         <Content style={{ display: 'flex', flexWrap: 'wrap' }}>
           <Col style={{ width: '100%', marginTop: 32 }}>
@@ -79,7 +122,7 @@ export const SalesListView = () => {
                 {isLoading &&
                   [...Array(10)].map((_, idx) => <CardLoader key={idx} />)}
                 {!isLoading &&
-                  auctions.map(auction => (
+                  filteredAuctions.map(auction => (
                     <Link
                       key={auction.auction.pubkey}
                       to={`/auction/${auction.auction.pubkey}`}
